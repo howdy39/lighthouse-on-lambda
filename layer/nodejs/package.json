@@ -1,0 +1,21 @@
+{
+  "name": "lighthouse-layer-nodejs",
+  "private": true,
+  "version": "0.0.1",
+  "description": "lighthouse layer nodejs",
+  "engines": {
+    "node": ">= v10.18.1"
+  },
+  "scripts": {
+    "postinstall": "node decompress-binary.js"
+  },
+  "author": "Erez Rokah",
+  "license": "MIT",
+  "homepage": "https://github.com/adieuadieu/erezrokah/lighthouse-runner/layers/lighthouse/nodejs",
+  "dependencies": {
+    "chrome-aws-lambda": "^1.20.3",
+    "chrome-launcher": "^0.11.2",
+    "lighthouse": "^5.6.0",
+    "lighthouse-logger": "^1.2.0"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "lighthouse-on-lambda-with-spreadsheets",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Run lighthouse audits from headless chrome in lambda. Write to Spreadsheets",
+  "engines": {
+    "node": ">= v10.18.1"
+  },
+  "scripts": {
+    "deploy": "serverless deploy",
+    "remove": "serverless remove",
+    "postinstall": "cd layer/nodejs && yarn"
+  },
+  "author": "Erez Rokah",
+  "license": "MIT",
+  "homepage": "https://github.com/adieuadieu/erezrokah/lighthouse-runner/layers/lighthouse",
+  "dependencies": {},
+  "devDependencies": {
+    "fs-extra": "^8.1.0",
+    "prettier": "^1.18.2",
+    "tar-fs": "^2.0.0"
+  }
+}
