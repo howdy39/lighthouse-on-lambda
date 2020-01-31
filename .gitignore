@@ -4,3 +4,4 @@ layer/lib
 layer/bin
 
 .node-version
+.envrc
