@@ -7,7 +7,7 @@ provider:
   stage: ${opt:stage, 'prod'}
   region: ${opt:region, 'ap-northeast-1'}
   environment:
-    TARGET_URL: 'https://techthetoaster.org'
+    TARGET_URL: 'https://howdy39.dev'
     WEBHOOK_URL: 'https://script.google.com/macros/s/AKfycbyMw1wxBBGqYolnrTFTwGIx63DKBQSS-ZKvscZuJTgtthmN1CcI/exec'
 
 functions:

@@ -1,13 +1,24 @@
 # lighthouse-on-lambda
 
+## Prerequisites
+serverless
+.envrc
+
+
+## ローカルで実行
+
+```
+node test-runner.js
+```
+
 ## deploy
 ```
-yarn deploy
+serverless deploy
 ```
 
 ## remove
 ```
-yarn remove
+serverless remove
 ```
 
 ## postinstall

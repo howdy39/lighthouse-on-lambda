@@ -1,38 +1,7 @@
-const lighthouse = require('./lighthouse');
-const chromeLauncher = require('chrome-launcher');
+process.env.IS_LOCAL = true;
+process.env.TARGET_URL = 'https://howdy39.dev';
+// @see https://script.google.com/d/1qC41Vn-VJ7YiEV9881xIYjm1RcOGy0hCL0dJuVh0-8r_df_0qQ8mrZub/edit?mid=ACjPJvHbTFx942csR5lQQeNGwJH6EH8olXR047RzSw9_CZOxd_r19uCdLIVOgzEktzXLKisvz6feFwE2dnBFDarjWvgXbKkFic24BHo_BCsybTHEHQyc9IW2X8vXcTZObz72tklxm6rSDR4&uiv=2
+process.env.WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyMw1wxBBGqYolnrTFTwGIx63DKBQSS-ZKvscZuJTgtthmN1CcI/exec';
 
-const send2gas= require('./send2gas');
-
-function launchChromeAndRunLighthouse(url, opts, config = null) {
-  return chromeLauncher.launch({chromeFlags: opts.chromeFlags}).then(chrome => {
-    opts.port = chrome.port;
-    return lighthouse.getLighthouseScore(url, opts, config).then(score => {
-      return chrome.kill().then(() => score);
-    });
-  });
-}
-
-const TARGET_URL = "https://techthetoaster.stores.jp";
-const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyMw1wxBBGqYolnrTFTwGIx63DKBQSS-ZKvscZuJTgtthmN1CcI/exec'
-
-const opts = {
-  disableCpuThrottling: true,
-  disableNetworkThrottling: true,
-  chromeFlags: [
-    '--show-paint-rects',
-    '--window-size=1680x1050',
-    '--hide-scrollbars',
-    '--ignore-certificate-errors',
-    // '--headless',
-    '--disable-gpu',
-    '--no-sandbox',
-    '--homedir=/tmp/randompath0',
-    // '--single-process',
-    '--data-path=/tmp/randompath1',
-    '--disk-cache-dir=/tmp/randompath2'
- ]
-};
-
-launchChromeAndRunLighthouse(TARGET_URL, opts).then(score => {
-  send2gas.run(WEBHOOK_URL, score);
-});
+const index = require('./index');
+index.handler();

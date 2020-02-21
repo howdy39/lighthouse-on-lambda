@@ -11,10 +11,13 @@
     "remove": "serverless remove",
     "postinstall": "cd layer/nodejs && yarn"
   },
-  "author": "Erez Rokah",
+  "author": "howdy39",
   "license": "MIT",
-  "homepage": "https://github.com/adieuadieu/erezrokah/lighthouse-runner/layers/lighthouse",
-  "dependencies": {},
+  "homepage": "https://github.com/howdy39/lighthouse-on-lambda",
+  "dependencies": {
+    "lighthouse": "^5.6.0",
+    "request-promise": "^4.2.5"
+  },
   "devDependencies": {
     "fs-extra": "^8.1.0",
     "prettier": "^1.18.2",

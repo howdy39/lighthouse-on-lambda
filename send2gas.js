@@ -6,7 +6,7 @@ exports.run = (url, score) => {
     accessibility: score.accessibility,
     best_practices: score['best-practices'],
     seo: score.seo,
-    progressive_web_app: score.pwa
+    progressive_web_app: Math.floor((score.pwa))
   };
 
   const options = {
