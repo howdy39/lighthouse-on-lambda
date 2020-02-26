@@ -9,30 +9,23 @@ https://script.google.com/d/1qC41Vn-VJ7YiEV9881xIYjm1RcOGy0hCL0dJuVh0-8r_df_0qQ8
 
 
 ## Prerequisites
-serverless
-.envrc
 
+- serverlessのインストール
+- .envrc の設定
 
 ## ローカルで実行
 
 ```
-cd lighthouse-function
+cd lighthouste-function
 node test-runner.js
 ```
 
-## deploy
+## deploy, remove
+それぞれのリポジトリで deploy, remove を実行する。
+
 ```
 serverless deploy
-```
-
-## remove
-```
 serverless remove
-```
-
-## postinstall
-```
-yarn postinstall
 ```
 
 ## 便利コマンド
