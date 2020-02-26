@@ -1,0 +1,17 @@
+service: lighthouse-layer
+description: 'A Lambda layer with all the required dependencies to run Google Lighthouse'
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${opt:stage, 'prod'}
+  region: ${opt:region, 'ap-northeast-1'}
+
+layers:
+  lighthouse:
+    path: ./layer
+    description: Layer with all the required dependencies to run google lighthouse
+    compatibleRuntimes:
+      - nodejs10.x
+    licenseInfo: MIT
+    retain: true

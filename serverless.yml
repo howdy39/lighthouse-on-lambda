@@ -13,6 +13,9 @@ provider:
 functions:
   auditor:
     handler: handler.audit
+    # layers:
+      # - arn:aws:lambda:ap-northeast-1:244165946632:layer:test:1 #250MB超えでエラー
+      # - ${cf:lighthouse-on-lambda-prod.TestLambdaLayerQualifiedArn} #250MB超えでエラー`
     description: 'Chromeを動かすのでそれなりにメモリが必要'
     memorySize: 768
     timeout: 120

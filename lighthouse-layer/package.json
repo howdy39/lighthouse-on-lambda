@@ -1,0 +1,23 @@
+{
+  "name": "lighthouse-layer",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A Lambda layer with all the required dependencies to run Google Lighthouse",
+  "engines": {
+    "node": ">= v10.18.1"
+  },
+  "scripts": {
+    "deploy": "serverless deploy",
+    "remove": "serverless remove",
+    "postinstall": "cd layer/nodejs && yarn"
+  },
+  "author": "howdy39",
+  "license": "MIT",
+  "homepage": "https://github.com/howdy39/lighthouse-on-lambda",
+  "dependencies": {},
+  "devDependencies": {
+    "fs-extra": "^8.1.0",
+    "prettier": "^1.18.2",
+    "tar-fs": "^2.0.0"
+  }
+}
