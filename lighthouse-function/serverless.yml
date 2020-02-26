@@ -1,4 +1,4 @@
-service: lighthouse-on-lambda
+service: lighthouse-function
 description: 'Record lighthouse score on spreadsheets'
 
 provider:
@@ -12,7 +12,9 @@ provider:
 
 functions:
   auditor:
-    handler: handler.audit
+    handler: index.handler
+    layers:
+      - ${cf:lighthouse-layer-prod.LighthouseLambdaLayerQualifiedArn}
     description: 'Chromeを動かすのでそれなりにメモリが必要'
     memorySize: 768
     timeout: 120
@@ -20,12 +22,3 @@ functions:
       - schedule:
           rate: cron(0 9 * * ? *)
           enabled: true
-
-layers:
-  lighthouse:
-    path: ./layer
-    description: Layer with all the required dependencies to run google lighthouse
-    compatibleRuntimes:
-      - nodejs10.x
-    licenseInfo: MIT
-    retain: true
