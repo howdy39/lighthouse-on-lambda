@@ -5,6 +5,7 @@ const send2gas= require('./send2gas');
 
 let chromePath = undefined;
 
+console.log('process.env.IS_LOCAL', process.env.IS_LOCAL);
 // this lets us support invoke local
 if (!process.env.IS_LOCAL) {
   chromePath = '/opt/bin/chromium';
@@ -39,6 +40,8 @@ const chromeFlags = [
 const runLighthouse = async (url) => {
   let chrome = null;
   try {
+    console.log('chromeFlags', chromeFlags);
+    console.log('chromePath', chromePath);
     chrome = await chromeLauncher.launch({ chromeFlags, chromePath });
 
     const options = {
@@ -48,6 +51,8 @@ const runLighthouse = async (url) => {
 
     log.setLevel(options.logLevel);
 
+    console.log('url', url);
+    console.log('options', options);
     const results = await lighthouse.getLighthouseScore(url, options)
     return results;
   } finally {
