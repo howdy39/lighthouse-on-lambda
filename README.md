@@ -16,6 +16,7 @@ serverless
 ## ローカルで実行
 
 ```
+cd lighthouse-function
 node test-runner.js
 ```
 
