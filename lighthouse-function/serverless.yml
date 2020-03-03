@@ -14,7 +14,7 @@ functions:
   auditor:
     handler: index.handler
     layers:
-      - ${cf:lighthouse-layer-prod.LighthouseLambdaLayerQualifiedArn}
+      - ${cf:lighthouse-layer-${self:provider.stage}.LighthouseLambdaLayerQualifiedArn}
     description: 'Chromeを動かすのでそれなりにメモリが必要'
     memorySize: 768
     timeout: 120
